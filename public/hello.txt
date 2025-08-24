@@ -1,0 +1,64 @@
+.left-block {
+    background-color: #f8f9fa; /* Light background for left block */
+    padding: 20px;
+    text-align: center; /* Center content inside */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; /* Set a minimum height */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+
+
+.container2 {
+    margin-top: -300px;
+    display: flex; /* Align items side by side */
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Add space between the blocks */
+    width: 50%; /* Full width */
+    padding: 20px;
+}
+
+.left-block, .right-block {
+    flex: 1; /* Each block takes equal space */
+    margin: 10px; /* Add spacing between the blocks */
+    border-radius: 20px; /* Rounded corners */
+    overflow: hidden; 
+    color: #ffffff;
+    height: 400px;/* Prevent content from spilling out of the border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for effect */
+    
+}
+
+.left-block {
+    width: 50px; /* Adjust based on the layout */
+    height: 800px; /* Full height of the container */
+    background: #f4f4f4; /* Neutral background color */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+    border-radius: 10px; /* Rounded corners for a smooth look */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.embedded-content {
+    width: 100%; /* Full width of the left-block */
+    height: 100%; /* Full height of the left-block */
+    border: none; /* Remove the iframe border */
+    border-radius: 8px; /* Rounded corners to match the container */
+}
+
+.right-block {
+    background-image: url('bg.jpg'); /* Background image for right block */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff; /* Ensure text is visible */
+    padding: 20px; /* Add space for content inside */
+    display: flex; /* Align inner elements */
+    flex-direction: column; /* Stack inner elements */
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+    border-radius: 20px;
+    width: 700px;
+}

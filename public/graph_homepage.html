@@ -1,0 +1,346 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Growth Line Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            margin-top: 50px;
+        }
+        .stock-logo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 80px;
+        }
+        footer {
+            text-align: center;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <img class="stock-logo" id="stockLogo" src="" alt="Stock Logo">
+        <canvas id="lineChart"></canvas>
+        <footer id="stockFooter"></footer>
+    </div>
+
+    <script>
+        // Declare variables once
+        const stockData = {
+            'ADANIENT.NS': [208.35, 479.55, 1709.45, 3858.35, 2848.95],
+            'TATAMOTORS.NS': [185.15, 183.85, 482.4, 387.95, 779.95],
+            'APOLLOHOSP.NS': [1442, 2412.8, 5013.4, 4477.6, 5704.1],
+            'JSWSTEEL.NS': [270.05, 387.2, 655.95, 768.05, 880.25],
+            'M&M.NS': [531.55, 720.6, 837.15, 1249.2, 1729.4]
+        };
+
+        const years = ['2019', '2020', '2021', '2022', '2023'];
+        const colors = { line: 'green', point: 'blue', hover: 'darkgreen' };
+
+        const stockNames = [
+            'ADANIENT.NS',
+            'TATAMOTORS.NS',
+            'APOLLOHOSP.NS',
+            'JSWSTEEL.NS',
+            'M&M.NS'
+        ];
+
+        // const stockLogos = {
+        //     'ADANIENT.NS': 'project-root\COMPANY LOGOS\ADANIENT.NS_BIG.png',
+        //     'TATAMOTORS.NS': 'C:/Users/DELL/Desktop/MINOR PROJECT/COMPANY LOGOS/TATAMOTORS.NS_BIG.svg',
+        //     'APOLLOHOSP.NS': 'COMPANY LOGOS/ADANIENT.NS_BIG.png',
+        //     'JSWSTEEL.NS': 'COMPANY LOGOS/ADANIENT.NS_BIG.png',
+        //     'M&M.NS': 'COMPANY LOGOS/ADANIENT.NS_BIG.png'
+        // };
+
+        const stockLogos = {
+    'ADANIENT.NS': './COMPANY_LOGOS/ADANIENT.NS_BIG.png',
+    'TATAMOTORS.NS': './COMPANY_LOGOS/TATAMOTORS.NS_BIG.svg',
+    'APOLLOHOSP.NS': './COMPANY LOGOS/APOLLOHOSP.NS_BIG.png',
+    'JSWSTEEL.NS': './COMPANY LOGOS/JSWSTEEL.NS_BIG.png',
+    'M&M.NS': './COMPANY LOGOS/M&M.NS_BIG.png'
+};
+
+        let selectedStock = 'ADANIENT.NS'; // Default selection
+
+        // Chart setup
+        const ctx = document.getElementById('lineChart').getContext('2d');
+        let chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: `${selectedStock} Growth`,
+                    data: stockData[selectedStock],
+                    borderColor: colors.line,
+                    backgroundColor: colors.point,
+                    pointHoverBackgroundColor: colors.hover,
+                    fill: false
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true },
+                    tooltip: { mode: 'index', intersect: false }
+                },
+                scales: {
+                    x: { display: true, title: { display: true, text: 'Year' } },
+                    y: { display: true, title: { display: true, text: 'Stock Price' } }
+                }
+            }
+        });
+
+        // Update chart and footer dynamically
+        function updateChart(stock) {
+            chart.data.datasets[0].label = `${stock} Growth`;
+            chart.data.datasets[0].data = stockData[stock];
+            chart.update();
+
+            const logo = document.getElementById('stockLogo');
+            logo.src = stockLogos[stock];
+            logo.alt = `${stock} Logo`;
+
+            const footer = document.getElementById('stockFooter');
+            footer.textContent = `Current Stock: ${stock}`;
+        }
+
+        // Initialize with the default stock
+        updateChart(selectedStock);
+    </script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Nifty50 Stocks</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e2f;
+            color: #fff;
+        }
+
+        .chart-container2 {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px auto;
+            background: #15172d;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            text-align: center;
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+
+        .stock-logo {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 120px;
+            margin-top: -25px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 18px;
+            margin-top: 20px;
+            color: #0bb338;
+        }
+
+        .slider {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background: #16a54a;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #0bb338;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top Nifty50 Stocks</h1>
+    <div class="chart-container2">
+        <img class="stock-logo" id="stockLogo" src="" alt="Stock Logo">
+        <canvas id="lineChart"></canvas>
+        <footer id="stockFooter"></footer>
+        <div class="slider" id="slider">
+            <!-- Dots will be added dynamically -->
+        </div>
+    </div>
+
+    <script>
+        const stockData = {
+            'ADANI ENTERPRISES': [208.35, 479.55, 1709.45, 3858.35, 2848.95],
+            'TATA MOTORS': [185.15, 183.85, 482.4, 387.95, 779.95],
+            'APOLLO HOSPITALS': [1442, 2412.8, 5013.4, 4477.6, 5704.1],
+            'JSW STEEL': [270.05, 387.2, 655.95, 768.05, 880.25],
+            'MAHINDRA & MAHINDRA': [531.55, 720.6, 837.15, 1249.2, 1729.4]
+        };
+
+        
+
+        const years = ['2019', '2020', '2021', '2022', '2023'];
+
+        // const stockLogos = {
+        //     'ADANIENT.NS':'./COMPANY LOGOS/ADANIENT.NS_BIG.png',
+        //     'TATAMOTORS.NS': 'C:/Users/DELL/Desktop/MINOR PROJECT/COMPANY LOGOS/TATAMOTORS.NS_BIG.svg',
+        //     'APOLLOHOSP.NS': 'COMPANY LOGOS/ADANIENT.NS_BIG.png',
+        //     'JSWSTEEL.NS': 'COMPANY LOGOS/ADANIENT.NS_BIG.png',
+        //     'M&M.NS': 'COMPANY LOGOS/ADANIENT.NS_BIG.png'
+        // };
+
+        const stockLogos = {
+            'ADANI ENTERPRISES':'https://companieslogo.com/img/orig/ADANIENT.NS_BIG-47e4503c.png?t=1720244490',
+            'TATA MOTORS': 'https://companieslogo.com/img/orig/TATAMOTORS.NS-1c3e3e90.png?t=1720244494',
+            'APOLLO HOSPITALS': 'https://companieslogo.com/img/orig/APOLLOHOSP.NS_BIG-7f75df62.png?t=1720244490',
+            'JSW STEEL': 'https://companieslogo.com/img/orig/JSWSTEEL.NS-5d2dda26.png?t=1722958128',
+            'MAHINDRA & MAHINDRA': 'https://companieslogo.com/img/orig/M&M.NS_BIG-bdd6ba44.png?t=1728985155'
+        };
+
+
+
+        const stockNames = Object.keys(stockData);
+
+        let currentIndex = 0; // To track the current stock index
+
+        // Chart setup
+        
+const ctx = document.getElementById('lineChart').getContext('2d');
+let chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: years,
+        datasets: [{
+            label: `${stockNames[currentIndex]} Growth`, // This will not show on the chart but is used for tooltips
+            data: stockData[stockNames[currentIndex]],
+            // borderColor: '#f39c12',
+            // backgroundColor: 'rgba(243, 156, 18, 0.2)',
+            // pointHoverBackgroundColor: '#f39c12',
+            // pointBorderColor: '#f39c12',
+            // fill: true
+            borderColor: '#28a745', // Green shade for the line
+backgroundColor: 'rgba(40, 167, 69, 0.2)', // Light green shade for the background fill
+pointHoverBackgroundColor: '#28a745', // Green shade for the hover effect
+pointBorderColor: '#28a745', // Green shade for the points border
+fill: true // Fill the area under the line with the green background color
+
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false }, // Hide the legend to avoid duplication
+            tooltip: { mode: 'index', intersect: false },
+            title: {
+                display: true,
+                text: ``, // Display the label text at the bottom
+                position: 'bottom', // Title position set to bottom
+                font: {
+                    size: 1,
+                    weight: 'bold'
+                },
+                color: '#f39c12', // The color of the title
+                padding: { top: 20, bottom: 20 } // Padding to give space around the title
+            }
+        },
+        scales: {
+            x: { display: true, title: { display: true, text: 'Year' } },
+            y: { display: true, title: { display: true, text: 'Stock Price' } }
+        }
+    }
+});
+
+
+        // Update chart and footer dynamically
+        function updateChart(index) {
+            const stock = stockNames[index];
+            chart.data.datasets[0].label = `${stock} Growth`;
+            chart.data.datasets[0].data = stockData[stock];
+            chart.update();
+
+            const logo = document.getElementById('stockLogo');
+            logo.src = stockLogos[stock];
+            logo.alt = `${stock} Logo`;
+
+            const footer = document.getElementById('stockFooter');
+            footer.textContent = `${stock}`;
+
+            // Update slider dots
+            document.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === index);
+            });
+        }
+
+        // Create slider dots dynamically
+        const slider = document.getElementById('slider');
+        stockNames.forEach((_, idx) => {
+            const dot = document.createElement('div');
+            dot.className = 'slider-dot';
+            if (idx === currentIndex) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                currentIndex = idx;
+                updateChart(currentIndex);
+            });
+            slider.appendChild(dot);
+        });
+
+        // Initialize with the default stock
+        updateChart(currentIndex);
+
+        setInterval(() => {
+    currentIndex = (currentIndex + 1) % stockNames.length; // Move to the next stock, loop back to the start if at the end
+    updateChart(currentIndex);
+}, 5000); // 5000 miliseconds
+    </script>
+</body>
+</html>

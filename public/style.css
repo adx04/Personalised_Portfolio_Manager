@@ -1,0 +1,425 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,500&display=swap');
+
+html {
+    scroll-behavior:smooth;
+  }
+
+* {
+    font-family: "poppins", sans-serif;
+}
+
+
+body {
+    min-height: 100vh;
+    background: #ffffff;
+
+}
+
+
+#logo-1 {
+    width: 200px; 
+    height: 150px;
+    float: left;
+    margin-left: 30px;
+}
+
+#navigation_bar ul {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    z-index: 1000; 
+}
+
+#navigation_bar ul li {
+    display: inline-block;
+    margin: 0 35px;
+}
+
+#navigation_bar ul li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#navigation_bar ul li a::after {
+    content: '';
+    width: 0px;
+    height: 2px;
+    background: rgb(20, 88, 213);
+    display: block;
+    transition: 0.2s linear;
+}
+
+#navigation_bar ul li a:hover::after {
+    width: 100%;
+}
+
+
+.container{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper{
+    width: 100%;
+    height: 1000px;
+}
+
+.swiper-wrapper{
+    height: 200px;
+}
+.swiper-slider  {
+    width: 100%;  
+}
+
+
+
+
+@keyframes animate{
+    0%{
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.2;
+    }
+    70%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(-0%);
+
+    }
+}
+
+.swiper .swiper-button-prev ,   .swiper .swiper-button-next{
+   color: #fff;
+}
+
+.swiper .swiper-pagination-bullet-active {
+   background-color: #fff;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.container2 {
+    display: flex; /* Align items side by side */
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Add space between the blocks */
+    width: 100%; /* Full width of the container */
+   margin-top: -300px;
+    
+}
+
+.left-block {
+    flex: 1; /* Allow the left block to take equal space */
+    max-width: 50%; /* Limit the left block to 50% width */
+    background: #f4f4f4; /* Neutral background color */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for a smooth look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+    display: flex; /* To center the iframe */
+    justify-content: center; /* Center iframe horizontally */
+    align-items: center; /* Center iframe vertically */
+    overflow: hidden; /* Prevent content overflow */
+    height: 630px;
+    margin-top: -20px;
+}
+
+.embedded-content {
+    width: 100%; /* Full width of the left block */
+    height: 100%; /* Full height of the left block */
+    border: none; /* Remove iframe border */
+    border-radius: 8px; /* Rounded corners to match the container */
+}
+
+.right-block {
+    flex: 1; /* Allow the right block to take equal space */
+    max-width: 50%; /* Limit the right block to 50% width */
+    background: linear-gradient(135deg, #1a2a6c, #7566ec, #4384e5); /* Background gradient */
+    color: #ffffff; /* Ensure text is visible */
+    padding: 20px; /* Add space for content inside */
+    border-radius: 20px;
+    display: flex; /* Align inner elements */
+    flex-direction: column; /* Stack inner elements */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center-align the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for aesthetics */
+    height: 600px;
+}
+
+/* Styling for the button */
+button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #176a76;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');
+
+.wrapper{
+    background: #1c3460;
+    height: 800px;
+    width: 1375px;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.4);
+}
+h2{
+    font-size: 35px;
+    color: #fff;
+    text-align: center;
+}
+hr{
+    color: #fff;
+    width: 100px;
+    margin: 10px auto;
+}
+.members{
+    display: flex;
+}
+.team-mem{
+    margin: 8px;
+    text-align: center; 
+}
+.team-mem img {
+    width: 310px;
+    height: 380px;
+    border-radius: 50%;
+    margin: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.team-mem img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Adds shadow on hover */
+    border: 3px ; /* Optional: Add a border on hover */
+}
+
+h4,p{
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin: 7px;
+}
+/* Styling the LinkedIn icon */
+.icon-bar {
+    font-size: 24px;
+    margin-top: 10px;
+    margin-right: 100px;
+    color: #ffffff; /* LinkedIn Blue */
+    transition: transform 0.3s, color 0.3s;
+    text-align: center; /* Center within the container */
+    display: inline-block;
+}
+
+.team-mem a {
+    display: block; /* Ensures the icon is centered below the content */
+    text-align: center;
+    margin-top: 5px; /* Adjust spacing between content and icon */
+    margin-right: -100px;
+}
+
+.icon-bar i {
+    margin-left: 45px;
+    font-size: 20px;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Hover effect for LinkedIn icon */
+.icon-bar:hover {
+    transform: scale(1.4); /* Slight zoom effect */
+    color: #ffffff; /* Darker shade of LinkedIn Blue on hover */
+}
+
+.curved-image {
+    border-radius: 15px; /* Adjust the value for more/less curvature */
+    width: 1300px; /* Set desired width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* To center it easily if needed */
+    margin: 0 auto; /* Center image horizontally */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
+
+
+.team-mem a {
+    display: block; /* Ensures the icon is centered below the content */
+    text-align: center;
+    margin-top: 5px; /* Adjust spacing between content and icon */
+    margin-right: -100px;
+}
+
+
+
+.team-mem a {
+    display: inline block; /* Ensures the icon is centered below the content */
+    text-align: center;
+    margin-top: 5px; /* Adjust spacing between content and icon */
+    margin-right: -100px;
+    margin: 0 10px;
+}
+
+
+.team-mem a {
+    display: inline-block; /* Keeps the icons inline */
+    text-align: center;
+    margin: 0.2px; /* Adds some spacing between icons */
+}
+
+.team-mem a i {
+    font-size: 24px; /* Adjust icon size */
+    color: #0077b5; /* LinkedIn Blue or other colors for icons */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.team-mem a i:hover {
+    color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.2); /* Slightly enlarges icon on hover */
+}
+
+
+#max-profit {
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-top:30px;
+}
+
+
+#dashboard-container {
+    display: none;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    margin: 20px;
+    padding: 20px;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.chart-container {
+    width: 400px;
+    height: 350px;
+    margin: 10px;
+}
+
+/* Chart Titles */
+.chart-title {
+    font-size: 18px;
+    padding: 10px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ff9800;
+}
+
+#input-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+#capital {
+    width: 100%; /* Full width for better responsiveness */
+    max-width: 200px; /* Restrict maximum width */
+    padding: 10px 20px; /* Add inner spacing */
+    margin: 10px auto; /* Center alignment */
+    font-size: 11px; /* Make the text readable */
+   
+    color: #4a4a4a; /* Text color */
+    border: 2px solid #28a745; /* Green border for a clean look */
+    border-radius: 25px; /* Rounded corners */
+    outline: none; /* Remove default focus border */
+    background: #f8f9fa; /* Light background for contrast */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth animation for hover/focus */
+}
+
+#capital:focus {
+    border-color: #000000; /* Darker green border on focus */
+    background: #ffffff; /* White background when typing */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on focus */
+}
+
+#capital::placeholder {
+    color: #a9a9a9; /* Subtle placeholder color */
+    font-style: italic; /* Differentiate placeholder text */
+}
+
+#capital:hover {
+    background: #e9f5e9; /* Slight green tint on hover */
+    border-color: #10cb3c; /* Consistent border color on hover */
+}
+#capital::-webkit-inner-spin-button,
+#capital::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Spinner Container */
+#loading-spinner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: none; /* Default hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* On top of everything */
+}
+
+/* Spinner Animation */
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3); /* Light grey border */
+    border-top: 8px solid #ffffff; /* White border at the top */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* Keyframes for Spinner Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.swiper-pagination {
+    display: none;
+}

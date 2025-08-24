@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: rgb(30,30,30); /* Grey background */
+        }
+
+        /* Fullscreen grey container */
+        #fullscreen-container {
+            width: 100vw;
+            height: 100%;
+            background-color: rgb(30,30,30); /* Grey color */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        /* Maximum profit heading */
+        #max-profit h2 {
+            font-size: 3rem;
+            color: #0abb0a; /* Bright green */
+            margin: 0;
+        }
+
+        /* Dashboard container for charts */
+        #dashboard-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            width: 94%;
+        }
+
+        /* Chart containers */
+        .chart-container {
+            width: 30%;
+        }
+
+        /* Chart headings */
+        .chart-container h3 {
+            text-align: center;
+            color: white;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    
+    <div id="max-profit" style="display: none; text-align: center; margin-bottom: 20px;">
+        <h2 style="color: rgb(10, 187, 10);">Maximum Profit: ₹<span id="profit-amount"></span></h2>
+    </div>
+    <div id="dashboard-container" style="display: flex; flex-wrap: wrap; gap: 20px;">
+        <div class="chart-container" style="width: 30%;">
+            <h3 style="color: white;">Stock Profit Distribution (Bar Chart)</h3>
+            <canvas id="stockBarChart"></canvas>
+        </div>
+        <div class="chart-container" style="width: 30%;">
+            <h3 style="color: white;">Stock Allocation Quantities (Pie Chart)</h3>
+            <canvas id="stockPieChart"></canvas>
+        </div>
+        <div class="chart-container" style="width: 30%;">
+            <h3 style="color: white;">Stock Performance Over Time (Line Chart)</h3>
+            <canvas id="stockLineChart"></canvas>
+        </div>
+    </div>
+    <script src="results.js"></script>
+</body>
+</html>

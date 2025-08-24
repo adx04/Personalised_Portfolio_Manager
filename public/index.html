@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MINOR PROJECT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loader-container" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <section id="home">
+        <div id="navigation_bar">
+            <nav>
+                <div class="logo">
+                    <img id="logo-1" src="logo.png" alt="">
+                </div>
+                <ul>
+                    <li class="item"><a href="#home">Home</a></li>
+                    <li class="item"><a href="#container2">Calculate Now</a></li>
+                    <li class="item"><a href="#wrapper">About us</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Swiper Section -->
+        <div class="container">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="1.jpg" alt="" class="curved-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="6.jpg" alt="" class="curved-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="2.jpg" alt="" class="curved-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="3.jpg" alt="" class="curved-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="4.jpg" alt="" class="curved-image">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="5.jpg" alt="" class="curved-image">
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Navigation -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Sections -->
+    <section id="container2">
+        <div class="container2">
+            <div class="left-block">
+                <iframe src="graph_homepage.html" class="embedded-content"></iframe>
+            </div>
+            <div class="right-block">
+                <p style="color: rgb(255, 255, 255); font-size: 30px;">
+                    <b>Curious how much your investment from 5 years ago would be worth today?</b>
+                </p>
+                <div id="input-container">
+                    <label for="capital">Enter Capital: </label>
+                    <input type="number" id="capital" placeholder="Enter capital amount">
+                    <button onclick="submitCapital()">Submit</button>
+                </div>
+                <div id="max-profit" style="display: none;">
+                    Maximum Profit: ₹<span id="profit-amount"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wrapper">
+        <div class="wrapper">
+            <h2>Our Team</h2>
+            <hr>
+            <div class="members">
+                <div class="team-mem">
+                    <img src="ayush.jpg" alt="Ayush Dey">
+                    <h4><b>Ayush Dey</b></h4>
+                    <p>Developed the frontend, designed webpages, and created visualizations using Chart.js and D3.js</p>
+                    <div class="icon-bar">
+                        <a href="https://www.linkedin.com/in/ayush-dey-36919825a/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:Ayush.104986@stu.upes.ac.in" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/adx04" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-mem">
+                    <img src="dhruvi.jpg" alt="Dhruvi Gaira">
+                    <h4><b>Dhruvi Gaira</b></h4>
+                    <p>Built the frontend, worked on webpage design, and implemented visualizations with Chart.js and D3.js.</p>
+                    <div class="icon-bar">
+                        <a href="https://www.linkedin.com/in/dhruvi-gaira-107a60259/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:gaira.dhruvi@gmail.com" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/dhruvigaira" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-mem">
+                    <img src="shashwat.jpg" alt="Shashwat Tripathi">
+                    <h4><b>Shashwat Tripathi</b></h4>
+                    <p>Developed the backend, managed database connectivity, handled git repositories and optimized algorithms.</p>
+                    <div class="icon-bar">
+                        <a href="https://www.linkedin.com/in/shashwat-tripathi-0b5864252/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:Shashwat.106990@stu.upes.ac.in" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/Shashwat-Tripathi-GITHUB" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="team-mem">
+                    <img src="shlok.jpg" alt="Shlok Anand">
+                    <h4><b>Shlok Anand</b></h4>
+                    <p>Responsible for backend implementation, ensuring database connectivity, and developing algorithms.</p>
+                    <div class="icon-bar">
+                        <a href="https://www.linkedin.com/in/shlok-anand-914923214/" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:shlokanand.work@gmail.com" target="_blank" rel="noopener">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/shlokiii" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const spinner = document.getElementById('loading-spinner');
+            
+            // Initialize Swiper
+            const swiper = new Swiper('.swiper', {
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // Hide spinner if navigating back
+            window.addEventListener('pageshow', (event) => {
+                if (event.persisted) {
+                    spinner.style.display = 'none';
+                }
+            });
+
+            // Hide spinner on page load
+            spinner.style.display = 'none';
+        });
+
+        function submitCapital() {
+            const spinner = document.getElementById('loading-spinner');
+            const capital = document.getElementById('capital').value;
+
+            // Validation
+            if (!capital || capital <= 149) {
+                alert('The Minimum Stock Price is ₹150!');
+                return;
+            }
+            if (capital > 2000000) {
+                alert('Relax! Enter a capital we can process 🤒');
+                return;
+            }
+
+            // Show spinner and redirect
+            spinner.style.display = 'flex';
+
+            fetch(`/get-stock-data?capital=${capital}`)
+                .then(response => response.json())
+                .then(data => {
+                    localStorage.setItem('stockData', JSON.stringify(data));
+                    window.location.href = 'results.html';
+                })
+                .catch(error => {
+                    console.error('Error fetching stock data:', error);
+                    alert('Failed to fetch stock data. Please try again later.');
+                    spinner.style.display = 'none';
+                });
+        }
+    </script>
+</body>
+</html>
